@@ -75,4 +75,12 @@ public class StudentServiceImpl implements StudentServiceI {
 		return examFormList;
 	}
 
+	@Override
+	public ExamForm updateData(int examId, ExamForm examform) {
+		
+		ExamForm examRef=efrepositary.save(examform);
+		
+		return  examRef;
+	}
+
 }

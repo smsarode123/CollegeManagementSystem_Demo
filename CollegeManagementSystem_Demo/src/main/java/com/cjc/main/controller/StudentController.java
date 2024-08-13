@@ -82,5 +82,19 @@ public class StudentController {
 		List<ExamForm> examFormList=stuservice.getAllExamDetails();
 		return new ResponseEntity<List<ExamForm>>(examFormList, HttpStatus.FOUND);
 	}
+	@PutMapping("/updateExamData/{examId}")
+	public ResponseEntity<ExamForm>updateExamData(@PathVariable("examId")int examId, @RequestBody ExamForm examform)
+	{
+		examform.setExamId(examId);
+		ExamForm examfromRef=stuservice.updateData(examId, examform );
+		
+		return new ResponseEntity<ExamForm>(examform,HttpStatus.OK);
+		
+		
+		
+	}
+	
+	
+	
 	
 }

@@ -6,4 +6,5 @@ import com.cjc.main.model.ExamForm;
 
 public interface ExamFormRepositary extends JpaRepository<ExamForm, Integer>{
 
+
 }

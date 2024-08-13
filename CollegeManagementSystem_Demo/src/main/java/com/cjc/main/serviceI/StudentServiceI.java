@@ -21,4 +21,6 @@ public interface StudentServiceI {
 
 	List<ExamForm> getAllExamDetails();
 
+	ExamForm updateData(int examId, ExamForm examform);
+
 }
