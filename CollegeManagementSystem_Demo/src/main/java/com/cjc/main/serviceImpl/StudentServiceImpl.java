@@ -1,5 +1,7 @@
 package com.cjc.main.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,12 @@ public class StudentServiceImpl implements StudentServiceI {
 	public Student saveStudentData(Student student) {
 
 		return repositary.save(student);
+	}
+
+	@Override
+	public List<Student> getAllStudent() {
+		
+		return repositary.findAll();
 	}
 
 }

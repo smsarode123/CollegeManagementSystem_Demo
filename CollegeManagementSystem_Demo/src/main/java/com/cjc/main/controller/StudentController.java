@@ -1,5 +1,7 @@
 package com.cjc.main.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cjc.main.model.Student;
 import com.cjc.main.serviceI.StudentServiceI;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 public class StudentController {
@@ -21,4 +26,13 @@ public class StudentController {
 		return new ResponseEntity<Student>(stu, HttpStatus.CREATED);
 
 	}
+	
+	@GetMapping("/getAllStudent")
+	public ResponseEntity<List<Student>> getAllStudent() {
+		
+		List<Student> list=stuservice.getAllStudent();
+		
+		return new ResponseEntity<List<Student>>(list, HttpStatus.OK);
+	}
+	
 }
