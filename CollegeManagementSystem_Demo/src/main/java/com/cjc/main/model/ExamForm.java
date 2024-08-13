@@ -20,7 +20,7 @@ public class ExamForm {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int examId;
 	private String examName;
-	private Date examDate;
+	private String examDate;
 	private boolean examResult;
 
 }
