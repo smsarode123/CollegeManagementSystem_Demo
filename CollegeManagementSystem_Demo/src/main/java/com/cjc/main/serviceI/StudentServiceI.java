@@ -14,4 +14,6 @@ public interface StudentServiceI {
 
 	Student updateData(int studentRollnumber, Student stu);
 
+	void deleteStudent(int studentRollnumber);
+
 }

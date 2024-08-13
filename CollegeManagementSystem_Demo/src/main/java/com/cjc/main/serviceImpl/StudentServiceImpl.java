@@ -50,4 +50,11 @@ public class StudentServiceImpl implements StudentServiceI {
 		return null;
 	}
 
+	@Override
+	public void deleteStudent(int studentRollnumber) {
+		
+		repositary.deleteById(studentRollnumber);
+		
+	}
+
 }

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cjc.main.model.Student;
 import com.cjc.main.serviceI.StudentServiceI;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -56,5 +58,15 @@ public class StudentController {
 		return new  ResponseEntity<Student>(student,HttpStatus.OK);
 		
 	}
+	@DeleteMapping("/deletestudentRollnumber/{studentRollnumber}")
+	  public ResponseEntity<String> deleteStudent(@PathVariable("studentRollnumber") int studentRollnumber)
+	  {
+	       stuservice.deleteStudent(studentRollnumber);
+	       ResponseEntity<String> response=new ResponseEntity<String>("Delete Data of Student",HttpStatus.GONE);
+	       
+	       return response;
+	  
+	  }
+	
 	
 }
