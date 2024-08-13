@@ -14,10 +14,11 @@ import com.cjc.main.serviceI.StudentServiceI;
 public class StudentController {
 	@Autowired
 	private StudentServiceI stuservice;
-@PostMapping("/saveStudentData")
-	public ResponseEntity<Student> saveStudentData(@RequestBody Student student){
-	Student stu=stuservice.saveStudentData(student);
+
+	@PostMapping("/saveStudentData")
+	public ResponseEntity<Student> saveStudentData(@RequestBody Student student) {
+		Student stu = stuservice.saveStudentData(student);
 		return new ResponseEntity<Student>(stu, HttpStatus.CREATED);
-		
+
 	}
 }
