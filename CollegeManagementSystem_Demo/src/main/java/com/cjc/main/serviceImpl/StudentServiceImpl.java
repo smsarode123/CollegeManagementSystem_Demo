@@ -16,7 +16,7 @@ public class StudentServiceImpl implements StudentServiceI {
 
 	@Override
 	public Student saveStudentData(Student student) {
-
+		
 		return repositary.save(student);
 	}
 
