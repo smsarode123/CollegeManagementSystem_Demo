@@ -22,7 +22,7 @@ public class Student {
 	private String studentName;
 	private String studentAddress;
 	private long studentMobileNumber;
-	private Date dateOfAdmission;
+	private String dateOfAdmission;
 	private String username;
 	private String password;
 	
