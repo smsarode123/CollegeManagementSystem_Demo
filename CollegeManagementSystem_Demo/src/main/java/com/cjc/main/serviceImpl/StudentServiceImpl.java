@@ -2,11 +2,13 @@ package com.cjc.main.serviceImpl;
 
 import java.util.List;
 import java.util.Optional;
-
+import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cjc.main.model.ExamForm;
 import com.cjc.main.model.Student;
+import com.cjc.main.repositary.ExamFormRepositary;
 import com.cjc.main.repositary.StudentRepositary;
 import com.cjc.main.serviceI.StudentServiceI;
 
@@ -14,6 +16,8 @@ import com.cjc.main.serviceI.StudentServiceI;
 public class StudentServiceImpl implements StudentServiceI {
 	@Autowired
 	private StudentRepositary repositary;
+	
+	@Autowired private ExamFormRepositary efrepositary;
 
 	@Override
 	public Student saveStudentData(Student student) {
@@ -55,6 +59,20 @@ public class StudentServiceImpl implements StudentServiceI {
 		
 		repositary.deleteById(studentRollnumber);
 		
+	}
+
+	@Override
+	public ExamForm saveExamDetails(ExamForm examForm) {
+		examForm.setExamDate(new Date());
+		ExamForm examFormRef=efrepositary.save(examForm);
+		
+		return examFormRef;
+	}
+
+	@Override
+	public List<ExamForm> getAllExamDetails() {
+		List<ExamForm> examFormList=efrepositary.findAll();
+		return examFormList;
 	}
 
 }

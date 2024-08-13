@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cjc.main.model.ExamForm;
 import com.cjc.main.model.Student;
 import com.cjc.main.serviceI.StudentServiceI;
 
@@ -68,5 +69,18 @@ public class StudentController {
 	  
 	  }
 	
+	@PostMapping("/post-Exam-Details")
+	public ResponseEntity<ExamForm> saveDetails(@RequestBody ExamForm examForm)
+	{
+		ExamForm examFormRef=stuservice.saveExamDetails(examForm);
+		return new ResponseEntity<ExamForm>(examFormRef, HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/fetch-All-Datails")
+	public ResponseEntity<List<ExamForm>> getAllExamDetails()
+	{
+		List<ExamForm> examFormList=stuservice.getAllExamDetails();
+		return new ResponseEntity<List<ExamForm>>(examFormList, HttpStatus.FOUND);
+	}
 	
 }
