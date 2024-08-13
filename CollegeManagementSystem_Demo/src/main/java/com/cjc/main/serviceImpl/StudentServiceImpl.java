@@ -75,4 +75,12 @@ public class StudentServiceImpl implements StudentServiceI {
 		return examFormList;
 	}
 
+	
+
+	@Override
+	public ExamForm getSingleDetail(int examId) {
+		
+		return efrepositary.findById(examId).get();
+	}
+
 }
