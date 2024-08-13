@@ -10,4 +10,8 @@ public interface StudentServiceI {
 
 	List<Student> getAllStudent();
 
+	Student getSingleStudent(int studentRollnumber);
+
+	Student updateData(int studentRollnumber, Student stu);
+
 }
