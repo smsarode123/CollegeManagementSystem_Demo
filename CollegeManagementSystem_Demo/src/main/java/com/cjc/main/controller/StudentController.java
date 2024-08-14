@@ -94,7 +94,10 @@ public class StudentController {
 		
 	}
 	
-	
-	
-	
+	@GetMapping("/getSinglDeatailBYExamId/{examId}")
+	public ResponseEntity<ExamForm> getSingleExamDetail(@PathVariable int examId){
+		ExamForm exam=stuservice.getSingleDetail(examId);
+		return new ResponseEntity<ExamForm>(exam,HttpStatus.OK);
+	}
+
 }
